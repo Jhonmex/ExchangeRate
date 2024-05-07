@@ -7,10 +7,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Moneda {
-    public double moneda_x;
-    public double moneda_y;
-    public String conversor;
-    public String direccion = "https://v6.exchangerate-api.com/v6/fe07803fe0c1fc2a45a4e545/latest/USD";
+    protected String currency;
+    private double monto;
+    private double resultado;
+    private String direccion = "https://v6.exchangerate-api.com/v6/fe07803fe0c1fc2a45a4e545/latest/USD";
 
     public void realizarSolicitud() {
         try {
@@ -27,5 +27,8 @@ public class Moneda {
             e.printStackTrace();
         }
     }
-    Gson js = new Gson();
+    public void cantidadAConvertir(){
+
+    }
+
 }
