@@ -13,11 +13,7 @@ public class Moneda {
     protected String divisaSecundaria;
     private double valorMoneda;
     private String json;
-    private Scanner sc;
-    private double monto;
-    private double resultado;
-    private String currencyCode;
-    private double rate;
+    protected String currency;
 
     public void realizarSolicitud() {
         String direccion = "https://v6.exchangerate-api.com/v6/fe07803fe0c1fc2a45a4e545/latest/" + divisaReferencia.toUpperCase();
@@ -30,20 +26,20 @@ public class Moneda {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
             json = response.body();
-        }catch (IOException | InterruptedException e){
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
-    public void obtenerValorMoneda(){
+    public void obtenerValorMoneda() {
         //Se crea FORMATEA JSON CON GSON
         Gson gson = new Gson();
         ExchangeRatesResponse exchangeRatesResponse = gson.fromJson(json, ExchangeRatesResponse.class);
         //Metodo para obtener el valor en otra moneda
         System.out.println("Escribe la divisa de referencia");
         //Checar como asignar valor a divisaSecundaria
-        valorMoneda= exchangeRatesResponse.getConversion_rates().get(divisaSecundaria.toUpperCase());
+        valorMoneda = exchangeRatesResponse.getConversion_rates().get(divisaSecundaria.toUpperCase());
         System.out.println(valorMoneda);
         System.out.println("El valor de 1 " + divisaReferencia + " en " + divisaSecundaria.toUpperCase() + " es: " + valorMoneda);
-    }
 
+    }
 }

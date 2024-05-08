@@ -8,7 +8,6 @@ public class Main {
         Moneda moneda = new Moneda();
         System.out.println("*******************************************");
         System.out.println("Bienvenidos al conversor de monedas");
-
         System.out.println("Escribe la moneda base");
         moneda.divisaReferencia = sc.nextLine();
         moneda.realizarSolicitud();
