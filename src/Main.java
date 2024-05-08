@@ -10,9 +10,10 @@ public class Main {
         System.out.println("Bienvenidos al conversor de monedas");
 
         System.out.println("Escribe la moneda base");
-        moneda.currency = sc.nextLine();
-
+        moneda.divisaReferencia = sc.nextLine();
         moneda.realizarSolicitud();
+        moneda.divisaSecundaria = sc.nextLine();
+        moneda.obtenerValorMoneda();
 
 
     }
