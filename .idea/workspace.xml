@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41e6c97a-ec2a-45c6-b642-3cca736d3ffd" name="Changes" comment="Se crea la conexcion con API">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/src/ExchangeRatesResponse.java" afterDir="false" />
-=======
->>>>>>> fb0ed7c1056efcdb13658895355ea4500548778e
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExchangeRatesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExchangeRatesResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Moneda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moneda.java" afterDir="false" />
     </list>
@@ -96,11 +93,8 @@
       <workItem from="1715119483047" duration="30000" />
       <workItem from="1715119536022" duration="194000" />
       <workItem from="1715119777403" duration="1775000" />
-<<<<<<< HEAD
       <workItem from="1715191291252" duration="18000" />
       <workItem from="1715191340487" duration="3506000" />
-=======
->>>>>>> fb0ed7c1056efcdb13658895355ea4500548778e
     </task>
     <task id="LOCAL-00001" summary="Se crea la conexcion con API">
       <option name="closed" value="true" />
