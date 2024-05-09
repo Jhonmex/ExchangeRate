@@ -5,8 +5,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Moneda moneda = new Moneda();
         moneda.realizarSolicitud();
-        moneda.obtenerValorMoneda(sc);
-        moneda.multiplicarMonto(sc);
+        moneda.obtenerValorMoneda();
+        moneda.multiplicarMonto();
+        moneda.nuevoIntenteto();
         sc.close();
     }
 }

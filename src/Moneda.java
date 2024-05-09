@@ -8,19 +8,23 @@ import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class Moneda {
-    private Scanner divisaReferencia;
-    private Scanner divisaSecundaria;
-    private Scanner monto;
+    private Scanner scanner;
+    private String divisaReferencia;
+    private String divisaSecundaria;
+    private String monto;
     private String divisaRef;
     private String divisaSec;
     private double valorMoneda;
     private String json;
 
+    public Moneda() {
+        this.scanner = new Scanner(System.in);
+    }
+
     public void realizarSolicitud() {
         System.out.println("*******************************************");
         System.out.println("Bienvenidos al conversor de monedas");
         System.out.println("Escribe la moneda base");
-        Scanner scanner = new Scanner(System.in);
         boolean monedaValida = false;
         while (!monedaValida){
             divisaRef = scanner.nextLine().toUpperCase();
@@ -45,7 +49,7 @@ public class Moneda {
             }
         }
     }
-    public void obtenerValorMoneda(Scanner scanner) {
+    public void obtenerValorMoneda() {
         //Se crea FORMATEA JSON CON GSON
         Gson gson = new Gson();
         ExchangeRatesResponse exchangeRatesResponse = gson.fromJson(json, ExchangeRatesResponse.class);
@@ -66,7 +70,7 @@ public class Moneda {
             }
         }
     }
-    public void multiplicarMonto(Scanner scanner){
+    public void multiplicarMonto(){
         boolean numeroValido = false;
         System.out.println("Escribe el monto para convertir");
         while (!numeroValido){
@@ -80,6 +84,29 @@ public class Moneda {
                 System.err.println("El valor ingresado no es un número válido.");
                 System.out.println("Ingresa un valor de nuevo");
                 scanner.nextLine();
+            }
+        }
+    }
+    public void nuevoIntenteto(){
+        boolean continuar = true;
+        while (continuar){
+            System.out.println("*******************************************");
+            System.out.println("Quieres hacer una nueva conversion");
+            System.out.println("Escribe 1 - Para continuar");
+            System.out.println("Escribe 2 - Para finalizar");
+            int opcion = scanner.nextInt();
+            scanner.nextLine();
+            switch (opcion){
+                case 1:
+                    realizarSolicitud();
+                    obtenerValorMoneda();
+                    multiplicarMonto();
+                    break;
+                case 2:
+                    continuar = false;
+                    break;
+                default:
+                    System.out.println("Escribe una opcion valida");
             }
         }
     }
